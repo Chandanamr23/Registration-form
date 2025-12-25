@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Registration Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="success-message" id="successMessage">
+            ✓ Registration submitted successfully!
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form-section" id="formSection">
+            <h1>Registration Form</h1>
+            <div class="step-indicator">Step 1 of 1 - Enter your details</div>
+
+            <form id="registrationForm">
+                <!-- Personal Information -->
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <span class="error">First name is required</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <span class="error">Last name is required</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error">Valid email is required</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <span class="error">Invalid phone number</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob">
+                    <span class="error">Invalid date</span>
+                </div>
+
+                <!-- Educational Background -->
+                <div class="form-group">
+                    <label for="qualification">Qualification *</label>
+                    <select id="qualification" name="qualification" required>
+                        <option value="">Select Qualification</option>
+                        <option value="High School">High School</option>
+                        <option value="Bachelor">Bachelor's Degree</option>
+                        <option value="Master">Master's Degree</option>
+                        <option value="PhD">PhD</option>
+                    </select>
+                    <span class="error">Qualification is required</span>
+                </div>
+
+                <!-- Interests -->
+                <div class="form-group">
+                    <label>Areas of Interest</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="Technology"> Technology</label>
+                        <label><input type="checkbox" name="interests" value="Business"> Business</label>
+                        <label><input type="checkbox" name="interests" value="Science"> Science</label>
+                    </div>
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" placeholder="Enter your full address"></textarea>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="form-group">
+                    <label><input type="checkbox" id="terms" name="terms" required> I agree to the terms and conditions</label>
+                    <span class="error">You must agree to the terms</span>
+                </div>
+
+                <!-- Buttons -->
+                <div class="button-group">
+                    <button type="submit" class="btn-submit">Submit</button>
+                    <button type="reset" class="btn-reset">Clear</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Results Display Section -->
+        <div class="form-section hidden" id="displaySection">
+            <h1>Registration Summary</h1>
+            <div id="displayContent"></div>
+            <div class="button-group">
+                <button class="btn-back" onclick="goBack()">Back to Form</button>
+                <button class="btn-submit" onclick="window.print()">Print</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
